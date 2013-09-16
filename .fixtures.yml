@@ -1,0 +1,6 @@
+fixtures:
+  repositories:
+    stdlib: "git://github.com/puppetlabs/puppetlabs-stdlib"
+#    dep2: "git://github.com/dep2author/dep2author-dep2module"
+  symlinks:
+    iptables_persistent: "#{source_dir}"

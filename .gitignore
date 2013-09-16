@@ -14,6 +14,11 @@ Session.vim
 ### Linux ###
 .*
 !.gitignore
+!.fixtures.yml
+!.gemfile
+!.gemfile.lock
+!.travis.yml
 *~
+
 
 
