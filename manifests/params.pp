@@ -59,7 +59,11 @@ class iptables_persistent::params (
 
   case $::operatingsystem {
     ubuntu, debian: {
-      $save_file_default = '/etc/iptables/rules'
+      #$save_file_default = '/etc/iptables/rules'
+      $save_file_default = $::lsbdistcodename ? { 
+        squeeze => '/etc/iptables/rules',
+        default => '/etc/iptables/rules.v4',
+      }
       $package_name      = 'iptables-persistent'
       $service_name      = '/etc/init.d/iptables-persistent'
     }

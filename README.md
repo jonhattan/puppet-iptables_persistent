@@ -18,4 +18,5 @@ Please log tickets and issues at the [GitHub Repository](https://projects.exampl
 
 TO-DO
 -----
+* Add support for ip6
 * Add tests

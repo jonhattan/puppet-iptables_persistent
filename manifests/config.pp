@@ -32,7 +32,7 @@ class iptables_persistent::config {
     default => $iptables_persistent::content,
   }
 
-  file { $iptables_persistent::config_file :
+  file { $iptables_persistent::save_file_real :
     ensure  => $iptables_persistent::ensure,
     owner   => 'root',
     group   => 'root',
