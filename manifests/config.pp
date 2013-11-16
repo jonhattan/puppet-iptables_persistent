@@ -39,6 +39,7 @@ class iptables_persistent::config {
     mode    => '0644',
     content => $content_real,
     source  => $iptables_persistent::source,
+    require => Package[$iptables_persistent::package_name],
     notify  => Service[$iptables_persistent::service_name],
   }
 
