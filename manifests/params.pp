@@ -65,7 +65,7 @@ class iptables_persistent::params (
         default => '/etc/iptables/rules.v4',
       }
       $package_name      = 'iptables-persistent'
-      $service_name      = '/etc/init.d/iptables-persistent'
+      $service_name      = 'iptables-persistent'
     }
 #    redhat, centos: {
 #    }
