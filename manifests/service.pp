@@ -32,6 +32,7 @@ class iptables_persistent::service {
     hasstatus  => false,
     hasrestart => false,
     enable     => true,
+    status     => '/bin/true',
   }
 
 }
