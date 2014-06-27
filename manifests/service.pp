@@ -16,11 +16,11 @@
 #
 # === Authors
 #
-# Pedro González Serrano - http://niteman.es
+# Pedro Gonzalez Serrano - http://niteman.es
 #
 # === Copyright
 #
-# Copyright 2013 Pedro González Serrano.
+# Copyright 2013 Pedro Gonzalez Serrano.
 # Licensed under "The MIT License". See LINCENSE file
 #
 class iptables_persistent::service {
