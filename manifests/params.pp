@@ -56,19 +56,21 @@ class iptables_persistent::params (
 ) {
 
   # TODO: verify that either content or source is provided.
-
-  case $::operatingsystem {
-    ubuntu, debian: {
-      #$save_file_default = '/etc/iptables/rules'
+  case $::osfamily {
+    'Debian': {
+      $package_name = 'iptables-persistent'
       $save_file_default = $::lsbdistcodename ? { 
         squeeze => '/etc/iptables/rules',
         default => '/etc/iptables/rules.v4',
       }
-      $package_name      = 'iptables-persistent'
-      $service_name      = 'iptables-persistent'
+      if $::operatingsystem == 'debian' and $::lsbmajdistrelease >= 8 {
+        $service_name = 'netfilter-persistent'
+      }
+      else {
+        $service_name = 'iptables-persistent'
+      }
     }
-#    redhat, centos: {
-#    }
+    'RedHat',
     default: {
       fail("Unsupported platform: ${::operatingsystem}")
     }
